@@ -6,7 +6,7 @@
 .pnp.js
 
 /.idea
-/migrations
+/prisma/migrations
 
 # testing
 /coverage
