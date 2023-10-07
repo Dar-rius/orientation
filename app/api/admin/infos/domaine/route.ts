@@ -1,5 +1,5 @@
 import main from "@/app/api/config";
-import {prisma} from "@/prisma/prisma";
+import prisma from "@/prisma/prisma";
 import {type NextRequest, NextResponse} from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse){
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest, res: NextResponse){
         })
         return NextResponse.json({messgae: "Data validate"}, {status: 201})
     }
-    catch{
+    catch(err){
         return NextResponse.json({messgae: "Data don't validate"}, {status: 500})
     }
     finally {

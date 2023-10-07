@@ -1,6 +1,6 @@
 import {NextRequest, NextResponse} from "next/server";
 import main from "@/app/api/config";
-import {prisma} from "@/prisma/prisma";
+import prisma from "@/prisma/prisma";
 
 export async function PUT(req: NextRequest, {params}: {params:{id:string}}){
     try{
@@ -34,7 +34,7 @@ export async function DELETE(req: NextRequest, {params}: {params: {id:string}}){
                 id:id
             }
         })
-        return NextResponse.json({messgae: "Data validate"}, {status: 200})
+        return NextResponse.json({messgae: "Data deleted"}, {status: 200})
     }
     catch{
         return NextResponse.json({messgae: "ID don't validate"}, {status: 404})
