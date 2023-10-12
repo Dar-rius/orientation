@@ -5,14 +5,14 @@ import prisma from "@/prisma/prisma";
 export async function PUT(req: NextRequest, {params}: {params:{id:string}}){
     try{
         const id = Number(params.id)
-        const {nom, description, adresse, filiere} = await req.json()
+        const {nom, description} = await req.json()
         await main()
-        await prisma.info_ecole.update({
+        await prisma.info_metier.update({
             where:{
                 id:id
             },
             data:{
-                nom, description, adresse, filiere
+                nom, description
             }
         })
         return NextResponse.json({messgae: "Data validate"}, {status: 201})
@@ -29,7 +29,7 @@ export async function DELETE(req: NextRequest, {params}: {params: {id:string}}){
     try{
         const id = Number(params.id)
         await main()
-        await prisma.info_ecole.delete({
+        await prisma.info_metier.delete({
             where:{
                 id:id
             }

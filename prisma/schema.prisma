@@ -16,8 +16,14 @@ model Conseiller {
   prenom    String @db.Char(15)
   email     String @unique
   telephone String @unique @db.Char(15)
-  adresse   String @db.Char(20)
-  password  String
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  nom      String @db.Char(15)
+  prenom   String @db.Char(15)
+  email    String @unique
+  password String
 }
 
 model Eleve {
@@ -30,56 +36,17 @@ model Eleve {
   password  String
 }
 
-model Test_Competence {
-  id       Int       @id @default(autoincrement())
-  domaine  String    @db.Char(20)
-  question Question?
-}
-
-model Question {
-  id         Int             @id @default(autoincrement())
-  test       Test_Competence @relation(fields: [id_test], references: [id])
-  id_test    Int             @unique
-  question1  String          @db.Char(200)
-  question2  String          @db.Char(200)
-  question3  String          @db.Char(200)
-  question4  String          @db.Char(200)
-  question5  String          @db.Char(200)
-  question6  String          @db.Char(200)
-  question7  String          @db.Char(200)
-  question8  String          @db.Char(200)
-  question9  String          @db.Char(200)
-  question10 String          @db.Char(200)
-  Reponse    Reponse?
-}
-
-model Reponse {
-  id          Int      @id @default(autoincrement())
-  question    Question @relation(fields: [id_question], references: [id])
-  id_question Int      @unique
-  reponse1    String   @db.Char(200)
-  reponse2    String   @db.Char(200)
-  reponse3    String   @db.Char(200)
-  reponse4    String   @db.Char(200)
-  reponse5    String   @db.Char(200)
-  reponse6    String   @db.Char(200)
-  reponse7    String   @db.Char(200)
-  reponse8    String   @db.Char(200)
-  reponse9    String   @db.Char(200)
-  reponse10   String   @db.Char(200)
-}
-
-model Resultat_test {
-  id       Int    @id @default(autoincrement())
-  domaine  String @db.Char(20)
-  resultat Int
-}
-
 model Info_domaine {
   id          Int    @id @default(autoincrement())
   nom         String @db.Char(20)
   description String
   debouche    String
+}
+
+model Info_metier {
+  id          Int    @id @default(autoincrement())
+  nom         String @db.Char(20)
+  description String
 }
 
 model Info_ecole {
