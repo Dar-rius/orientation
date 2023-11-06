@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Ceci est le projet sur l'orientation des gars du concours et il est fait avec le language typescript.
 
-## Getting Started
+## Comment installer et demarrer le server
 
-First, run the development server:
+D'abord il vous faut [node js](https://nodejs.org/en) pour lancer executer et installer les packages JS, ensuite [xampp](https://www.apachefriends.org/fr/index.html) pour utiliser une base de donnees mysql
+
+Apres avoir installer tout ce qui faut, vous allez installer le projet en copiant la ligne de commande ci-dessous:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Dar-rius/orientation.git
+
+# Et entrer dans le dossier du projet
+cd orientation
+
+# Une fois dans le projet installer les dependances et package du projet
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Apres avoir executer les commandes precedente, ouvrer xampp et executer le server spark et mysql.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ensuite executer les commandes suivantes dans le repetoir du projet "orientation"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# Migrer la base de donnees
+npx prisma migrate dev --name init
 
-## Learn More
+## Lancer le server
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Une fois les commandes executer aller dans le navigateur et tapper ceci [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Et maintenant c'est bon! 
