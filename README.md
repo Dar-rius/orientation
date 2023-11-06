@@ -1,4 +1,4 @@
-Ceci est le projet sur l'orientation des gars du concours et il est fait en Next js 13.4 avec le language typescript.
+Ceci est le projet sur l'orientation des gars du concours et il est fait en [Next js 13.4](https://nextjs.org/docs) avec le language typescript.
 
 ## Comment installer et demarrer le server
 
