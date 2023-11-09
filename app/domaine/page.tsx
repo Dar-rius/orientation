@@ -5,13 +5,5 @@ export default function Domaine(){
         <Link href={"/ecole"}>
             Rechercher un eleve
         </Link> <br/>
-
-        <Link href={"/metier"}>
-            Ajouter un nouveau metier
-        </Link><br/>
-
-        <Link href={"/forms"}>
-            Ajouter un nouveau domaine
-        </Link><br/>
     </>
 }
