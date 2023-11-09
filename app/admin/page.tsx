@@ -11,8 +11,12 @@ export default function Admin(){
                 Ajouter un nouveau domaine
             </Link><br/>
 
-            <Link href={"/admin/test_competence"}>
-                Ajouter un nouveau test
+            <Link href={"/admin/discusion"}>
+                Ajouter un nouvelle discusion
+            </Link><br/>
+
+            <Link href={"/admin/conseiller"}>
+                Ajouter un nouveau conseiller
             </Link><br/>
         </>
     )

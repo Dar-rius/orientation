@@ -1,5 +1,17 @@
+import Link from "next/link";
+
 export default function Discusion(){
     return<>
-        <h1>Test</h1>
+        <Link href={"/admin/discusion/forms"}>Ajouter un nouveau</Link>
+        <h1>discusion</h1>
+        <div>
+            <div>
+                <Link href={""}>
+                    <p>topic</p>
+                    <p>Subtitle</p>
+                    <p>Date</p>
+                </Link>
+            </div>
+        </div>
     </>
 }
