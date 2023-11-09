@@ -26,16 +26,16 @@ export default function FormsComp(){
 
     return(
         <>
-                <h2>Formulaire</h2>
-                <form onSubmit={handleSubmit}>
-                    <input placeholder="Nom" name="nom" onChange={
-                        (e)=>(nom.current=e.target.value)
-                    }/>
-                    <textarea name="description"  onChange={
-                        (e)=>(description.current=e.target.value)
-                    }/>
-                    <input type="submit" value="Valider"/>
-                </form>
+            <h2>Formulaire</h2>
+            <form onSubmit={handleSubmit}>
+                <input placeholder="Nom" name="nom" onChange={
+                    (e)=>(nom.current=e.target.value)
+                }/>
+                <textarea name="description"  onChange={
+                    (e)=>(description.current=e.target.value)
+                }/>
+                <input type="submit" value="Valider"/>
+            </form>
         </>
     )
 }

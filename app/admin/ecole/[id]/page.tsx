@@ -1,11 +1,11 @@
-import MetierComp from "@/components/client/admin/domaine/metier";
+import EcoleComp from "@/components/client/admin/domaine/ecole";
 
 export default function Metier( {params}:{params:{id:string}} ){
     const id = Number(params.id)
     return<>
         <section>
-           <h2>Metier</h2>
-            <MetierComp id={id}/>
+           <h2>test</h2>
+            <EcoleComp id={id}/>
         </section>
     </>
 }
