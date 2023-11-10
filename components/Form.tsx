@@ -6,39 +6,9 @@ import infoIcon from "../public/formulaire/5.svg";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
-import next from "next";
-
-type formData = {
-  id: number;
-  serie: string;
-  mention: string;
-  matDominante: string;
-  noteDominante: number;
-  matFaible: string;
-  noteFaible: number;
-  passion: string;
-  cariere: string;
-  objectif: string;
-  domaine: string;
-  soutien: string;
-  info: string;
-};
-
-const initialData: formData = {
-  id: 0,
-  serie: "",
-  mention: "",
-  matDominante: "",
-  noteDominante: 0,
-  matFaible: "",
-  noteFaible: 0,
-  passion: "",
-  cariere: "",
-  objectif: "",
-  domaine: "",
-  soutien: "",
-  info: "",
-};
+import schoolIcon from "../public/formulaire/1.svg";
+import bookIcon from "../public/formulaire/2.svg";
+import trousseau from "../public/formulaire/3.svg";
 
 export default function Form() {
   const [step, setStep] = useState(0);
@@ -73,6 +43,57 @@ export default function Form() {
 
   return (
     <>
+      <header className="mb-8">
+        <nav className="flex gap-8 p-4 justify-center items-center">
+          <div
+            className={
+              (step === 0 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-blue-100 rounded-full p-4 border border-black">
+              <Image
+                src={schoolIcon}
+                alt="school-image"
+                width={26}
+                height={26}
+              />
+            </div>
+            <p>Ecole</p>
+          </div>
+          <span className="block w-1 h-1 bg-black rounded-full -translate-y-4 before:-translate-x-4 before:bg-black before:w-1 before:h-1 before:block before:rounded-full after:translate-x-4 after:bg-black after:w-1 after:h-1 after:block after:rounded-full after:-translate-y-1"></span>
+          <div
+            className={
+              (step === 1 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-yellow-100 rounded-full p-4 border border-black">
+              <Image src={bookIcon} alt="book-image" width={26} height={26} />
+            </div>
+
+            <p>Vous</p>
+          </div>
+          <span className="block w-1 h-1 bg-black rounded-full -translate-y-4 before:-translate-x-4 before:bg-black before:w-1 before:h-1 before:block before:rounded-full after:translate-x-4 after:bg-black after:w-1 after:h-1 after:block after:rounded-full after:-translate-y-1"></span>
+
+          <div
+            className={
+              (step === 2 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-purple-500 rounded-full p-4 border border-black">
+              <Image
+                src={trousseau}
+                alt="trousseau-image"
+                width={26}
+                height={26}
+              />
+            </div>
+            <p>Ensuite</p>
+          </div>
+        </nav>
+      </header>
       <div className="flex gap-8">
         <div className="w-full flex flex-col p-8 border rounded relative gap-4">
           <Image
