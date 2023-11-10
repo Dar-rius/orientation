@@ -1,23 +1,114 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import formIcon from "../public/formulaire/4.svg";
 import infoIcon from "../public/formulaire/5.svg";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
+import schoolIcon from "../public/formulaire/1.svg";
+import bookIcon from "../public/formulaire/2.svg";
+import trousseau from "../public/formulaire/3.svg";
 
 export default function Form() {
+  const [step, setStep] = useState(0);
+  const [datas, setDatas] = useState<any>([]);
+
+  const forms = [<Step1 key={0} />, <Step2 key={1} />, <Step3 key={2} />];
+
+  async function nextStep(e) {
+    let Donnees = datas;
+    const formLenght =
+      step === 0 ? e.target.elements.length - 1 : e.target.elements.length - 2;
+    console.log(formLenght);
+    for (let i = 0; i < formLenght; i++) {
+      Donnees.push(e.target.elements[i].value);
+    }
+    setDatas(Donnees);
+    console.log(Donnees, datas);
+    await Donnees;
+    if (step > 1) return step;
+    setStep(step + 1);
+  }
+
+  function backStep() {
+    if (step === 0) return step;
+    setStep(step - 1);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    nextStep(e);
+  }
+
   return (
     <>
-      <div className="h-full flex gap-8">
-        <div className="w-full flex flex-col p-4 ">
-          <form className="p-4 border rounded relative">
-            <Image
-              src={formIcon}
-              alt="form-icon"
-              height={50}
-              width={50}
-              className="absolute -top-8 -right-4"
-            />
-            <input type="text" className="border" />
-            <input type="submit" value="submit" />
+      <header className="mb-8">
+        <nav className="flex gap-8 p-4 justify-center items-center">
+          <div
+            className={
+              (step === 0 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-blue-100 rounded-full p-4 border border-black">
+              <Image
+                src={schoolIcon}
+                alt="school-image"
+                width={26}
+                height={26}
+              />
+            </div>
+            <p>Ecole</p>
+          </div>
+          <span className="block w-1 h-1 bg-black rounded-full -translate-y-4 before:-translate-x-4 before:bg-black before:w-1 before:h-1 before:block before:rounded-full after:translate-x-4 after:bg-black after:w-1 after:h-1 after:block after:rounded-full after:-translate-y-1"></span>
+          <div
+            className={
+              (step === 1 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-yellow-100 rounded-full p-4 border border-black">
+              <Image src={bookIcon} alt="book-image" width={26} height={26} />
+            </div>
+
+            <p>Vous</p>
+          </div>
+          <span className="block w-1 h-1 bg-black rounded-full -translate-y-4 before:-translate-x-4 before:bg-black before:w-1 before:h-1 before:block before:rounded-full after:translate-x-4 after:bg-black after:w-1 after:h-1 after:block after:rounded-full after:-translate-y-1"></span>
+
+          <div
+            className={
+              (step === 2 ? "text-orange-300" : "") +
+              " flex flex-col items-center justify-center gap-4 "
+            }
+          >
+            <div className="bg-purple-500 rounded-full p-4 border border-black">
+              <Image
+                src={trousseau}
+                alt="trousseau-image"
+                width={26}
+                height={26}
+              />
+            </div>
+            <p>Ensuite</p>
+          </div>
+        </nav>
+      </header>
+      <div className="flex gap-8">
+        <div className="w-full flex flex-col p-8 border rounded relative gap-4">
+          <Image
+            src={formIcon}
+            alt="form-icon"
+            height={50}
+            width={50}
+            className="absolute -top-8 -right-4"
+          />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {forms[step]}
+
+            <button className="px-4 py-2 rounded bg-green-400" type="submit">
+              {step === 2 ? "finish" : "next"}
+            </button>
           </form>
         </div>
         <div className="flex flex-col items-center justify-center p-4 border-l border-black relative">
