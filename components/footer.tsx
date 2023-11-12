@@ -9,10 +9,17 @@ import Facebook from "@/public/footer/facebook.svg"
 import Insta from "@/public/footer/insta.svg"
 import Youtube from "@/public/footer/youtub.svg"
 import Twitter from "@/public/footer/twitter.svg"
+import Line1 from "@/public/footer/line.svg"
 
 export default function Footer(){
     return <footer>
         <div style={{
+            paddingTop:"5%",
+            borderTop:"dashed 2px #F875AA",
+            //borderStyle: "dashed solid",
+            borderBottom:"none",
+            borderRight:"none",
+            borderLeft:"none",
             display:"flex",
             justifyContent:"space-evenly",
             alignItems:"start",
