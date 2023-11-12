@@ -8,7 +8,7 @@ export async function PUT(
 ) {
   try {
     const id = Number(params.id);
-    const { nom, prenom, email, telephone } = await req.json();
+    const { nom, prenom, genre, email, telephone, description } = await req.json();
     await main();
     await prisma.conseiller.update({
       where: {
@@ -17,8 +17,10 @@ export async function PUT(
       data: {
         nom,
         prenom,
+        genre,
         email,
         telephone,
+        description
       },
     });
     return NextResponse.json({ message: "Data updated" }, { status: 201 });

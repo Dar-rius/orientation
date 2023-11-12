@@ -14,7 +14,7 @@ import Line1 from "@/public/footer/line.svg"
 export default function Footer(){
     return <footer>
         <div style={{
-            paddingTop:"5%",
+            paddingTop:"3%",
             borderTop:"dashed 2px #F875AA",
             //borderStyle: "dashed solid",
             borderBottom:"none",
@@ -163,22 +163,21 @@ export default function Footer(){
                 marginBottom:10,
                 fontWeight:500,
             }}>Contact</p>
-                <Image src={Line}
-                       alt="Line"
-                       style={{
-                    marginBottom:10,
-                    }}
-                />
             <Link href={""} style={{
                 marginBottom:15,
                 display:"flex",
                 alignItems:"center",
+
             }}>
                 <Image
                     src={Location}
                     alt={"Lieu"}
                     width={30}
-                    height={30}/>
+                    height={30}
+                    style={{
+                        marginRight:10,
+                    }}
+                />
                 <p>Dakar Plateau, Rue Saint Michel</p>
             </Link>
             <Link href={""} style={{
@@ -190,7 +189,10 @@ export default function Footer(){
                     src={Email}
                     alt={"Email"}
                     width={30}
-                    height={30}/>
+                    height={30}
+                    style={{
+                        marginRight:10,
+                    }}/>
                 <p>Ucao@Ucao.Edu.sn</p>
             </Link>
             <Link href={""} style={{
@@ -202,7 +204,10 @@ export default function Footer(){
                     src={Phone}
                     alt={"Phone"}
                     width={30}
-                    height={30}/>
+                    height={30}
+                    style={{
+                        marginRight:10,
+                    }}/>
                 <p>+221 800 00 50 50</p>
             </Link>
         </div>

@@ -11,11 +11,13 @@ datasource db {
 }
 
 model Conseiller {
-  id        Int    @id @default(autoincrement())
-  nom       String @db.Char(15)
-  prenom    String @db.Char(15)
-  email     String @unique
-  telephone String @unique @db.Char(15)
+  id          Int    @id @default(autoincrement())
+  nom         String @db.Char(15)
+  prenom      String @db.Char(15)
+  genre       String @db.Char(10)
+  email       String @unique
+  telephone   String @unique @db.Char(15)
+  description String @db.Char(60)
 }
 
 model Eleve {
