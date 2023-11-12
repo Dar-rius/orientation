@@ -18,14 +18,6 @@ model Conseiller {
   telephone String @unique @db.Char(15)
 }
 
-model Admin {
-  id       Int    @id @default(autoincrement())
-  nom      String @db.Char(15)
-  prenom   String @db.Char(15)
-  email    String @unique
-  password String
-}
-
 model Eleve {
   id        Int    @id @default(autoincrement())
   nom       String @db.Char(15)
@@ -36,29 +28,35 @@ model Eleve {
   password  String
 }
 
+model Discussion {
+  id      Int    @id @default(autoincrement())
+  subject String @db.Char(15)
+  topic   String @db.Char(30)
+}
+
 model Info_domaine {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(20)
+  id          Int           @id @default(autoincrement())
+  nom         String        @db.Char(20)
   description String
   Ecole       Info_ecole[]
   Metier      Info_metier[]
 }
 
 model Info_metier {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(20)
+  id          Int          @id @default(autoincrement())
+  nom         String       @db.Char(20)
   description String
   domaine     Info_domaine @relation(fields: [id_domaine], references: [id])
   id_domaine  Int
 }
 
 model Info_ecole {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(15)
-  adresse     String @db.Char(15)
-  site        String
-  domaine     Info_domaine @relation(fields: [id_domaine], references: [id])
-  id_domaine  Int
+  id         Int          @id @default(autoincrement())
+  nom        String       @db.Char(15)
+  adresse    String       @db.Char(15)
+  site       String
+  domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
+  id_domaine Int
 }
 
 model Questionnaire {
@@ -79,18 +77,18 @@ model Questionnaire {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
