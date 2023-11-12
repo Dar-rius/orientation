@@ -26,6 +26,7 @@ export default function Footer(){
                 display:"flex",
                 alignItems:"center",
             }}>
+                <Link href={""}>
                 <Image src={Facebook}
                        alt={"facebook"}
                         width={40}
@@ -34,6 +35,9 @@ export default function Footer(){
                            marginRight:5
                        }}
                 />
+                </Link>
+
+                <Link href={""}>
                 <Image src={Twitter}
                        alt={"twitter"}
                        width={40}
@@ -42,6 +46,9 @@ export default function Footer(){
                            marginRight:5
                        }}
                 />
+                </Link>
+
+                <Link href={""}>
                 <Image src={Insta}
                        alt={"Instagram"}
                        width={40}
@@ -50,11 +57,15 @@ export default function Footer(){
                            marginRight:5
                        }}
                 />
+                </Link>
+
+                <Link href={""}>
                 <Image src={Youtube}
                        alt={"Youtube"}
                        width={40}
                        height={40}
                 />
+                </Link>
             </div>
         </div>
 
