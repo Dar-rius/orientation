@@ -39,6 +39,7 @@ model Discussion {
 model Info_domaine {
   id          Int           @id @default(autoincrement())
   nom         String        @db.Char(20)
+  resume      String        @db.Char(100)
   description String
   Ecole       Info_ecole[]
   Metier      Info_metier[]
