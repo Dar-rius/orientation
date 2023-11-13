@@ -17,23 +17,13 @@ model Conseiller {
   genre       String @db.Char(10)
   email       String @unique
   telephone   String @unique @db.Char(15)
-  description String @db.Char(60)
-}
-
-model Eleve {
-  id        Int    @id @default(autoincrement())
-  nom       String @db.Char(15)
-  prenom    String @db.Char(15)
-  email     String @unique
-  telephone String @unique @db.Char(15)
-  age       Int
-  password  String
+  description String @db.Char(100)
 }
 
 model Discussion {
   id        Int      @id @default(autoincrement())
   subject   String   @db.Char(30)
-  topic     String   @db.Char(50)
+  topic     String   @db.Char(100)
   createdAt DateTime @default(now())
 }
 
@@ -41,7 +31,7 @@ model Info_domaine {
   id          Int           @id @default(autoincrement())
   nom         String        @db.Char(20)
   resume      String        @db.Char(100)
-  description String
+  description String        @db.Char(250)
   Ecole       Info_ecole[]
   Metier      Info_metier[]
 }
@@ -49,7 +39,7 @@ model Info_domaine {
 model Info_metier {
   id         Int          @id @default(autoincrement())
   nom        String       @db.Char(20)
-  resume     String       @db.Char(150)
+  resume     String       @db.Char(200)
   domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
   id_domaine Int
 }
@@ -57,7 +47,7 @@ model Info_metier {
 model Info_ecole {
   id         Int          @id @default(autoincrement())
   nom        String       @db.Char(15)
-  adresse    String       @db.Char(15)
+  adresse    String       @db.Char(30)
   site       String
   domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
   id_domaine Int
@@ -77,7 +67,7 @@ model Questionnaire {
   hobby             String
   domaine_interesse String
   soutien           String
-  infos_sup         String
+  infos_sup         String @db.Char(200)
 }
 
 model Account {

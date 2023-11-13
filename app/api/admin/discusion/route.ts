@@ -6,11 +6,11 @@ export async function POST(req: NextRequest) {
     try {
         const { subject, topic } = await req.json();
         await main();
-        await  prisma.discussion.create({
-            data:{
+        await  prisma.discussion.createMany({
+            data:[{
                 subject,
                 topic,
-            }
+            }]
         })
         return NextResponse.json({ message: "Data validate" }, { status: 201 });
     } catch (err) {

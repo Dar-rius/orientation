@@ -6,12 +6,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const { nom, description, resume } = await req.json();
     await main();
-    await prisma.info_domaine.create({
-      data: {
+    await prisma.info_domaine.createMany({
+      data: [{
         nom,
         description,
         resume
-      },
+      }],
     });
     return NextResponse.json({ messgae: "Data validate" }, { status: 201 });
   } catch (err) {
