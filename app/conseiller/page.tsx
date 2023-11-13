@@ -58,7 +58,7 @@ export default async function Conseiller(){
                             width:"40%",
                             marginLeft:"3%",
                         }}>
-                            <p style={{lineHeight:.7}}>{item.description}</p>
+                            <p style={{lineHeight:1}}>{item.description}</p>
                         </div>
                         <div style={{
                             background:"#FFE3EE",

@@ -31,9 +31,10 @@ model Eleve {
 }
 
 model Discussion {
-  id      Int    @id @default(autoincrement())
-  subject String @db.Char(15)
-  topic   String @db.Char(30)
+  id        Int      @id @default(autoincrement())
+  subject   String   @db.Char(15)
+  topic     String   @db.Char(30)
+  createdAt DateTime @default(now())
 }
 
 model Info_domaine {

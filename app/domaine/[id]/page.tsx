@@ -5,9 +5,7 @@ import Footer from "@/components/footer";
 export default function Domaine(){
     return<>
         <Header/>
-        <section>
 
-        </section>
         <Footer/>
     </>
 }
