@@ -19,18 +19,26 @@ async function getDomaine({id}:{id:number}){
     }
 }
 
-async function getEcole(){
+async function getEcole({id}:{id:number}){
     try{
-        const res = await prisma.info_ecole.findMany()
+        const res = await prisma.info_ecole.findMany({
+            where:{
+                id_domaine:id
+            }
+        })
         return res
     } catch (err){
         throw err
     }
 }
 
-async function getMetier(){
+async function getMetier({id}:{id:number}){
     try{
-        const res = await prisma.info_metier.findMany()
+        const res = await prisma.info_metier.findMany({
+            where:{
+                id_domaine:id
+            }
+        })
         return res
     } catch (err){
         throw err
@@ -40,8 +48,8 @@ async function getMetier(){
 export default async function Domaine({params}:{params:{id:string}}){
     const id = Number(params.id)
     const domaine = await getDomaine({id})
-    const ecoles = await getEcole()
-    const metier = await getMetier()
+    const ecoles = await getEcole({id})
+    const metier = await getMetier({id})
 
     return<main style={{
             background:"white",
