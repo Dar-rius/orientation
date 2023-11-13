@@ -32,8 +32,8 @@ model Eleve {
 
 model Discussion {
   id        Int      @id @default(autoincrement())
-  subject   String   @db.Char(15)
-  topic     String   @db.Char(30)
+  subject   String   @db.Char(30)
+  topic     String   @db.Char(50)
   createdAt DateTime @default(now())
 }
 
@@ -47,11 +47,11 @@ model Info_domaine {
 }
 
 model Info_metier {
-  id          Int          @id @default(autoincrement())
-  nom         String       @db.Char(20)
-  description String
-  domaine     Info_domaine @relation(fields: [id_domaine], references: [id])
-  id_domaine  Int
+  id         Int          @id @default(autoincrement())
+  nom        String       @db.Char(20)
+  resume     String       @db.Char(150)
+  domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
+  id_domaine Int
 }
 
 model Info_ecole {

@@ -1,0 +1,18 @@
+.header{
+    margin-top: 4%;
+    text-align: center;
+    color:#24ABFF
+}
+
+.header p{
+    margin-bottom: 1%;
+}
+
+.para{
+    font-size: 14px;
+}
+
+.header h1{
+    margin-bottom: 1%;
+    font-size: 38px;
+}

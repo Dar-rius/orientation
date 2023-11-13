@@ -5,14 +5,14 @@ import prisma from "@/prisma/prisma";
 export async function PUT(req: NextRequest, {params}: {params:{id:string}}){
     try{
         const id = Number(params.id)
-        const {nom, description} = await req.json()
+        const {nom, resume} = await req.json()
         await main()
         await prisma.info_metier.update({
             where:{
                 id:id
             },
             data:{
-                nom, description
+                nom, resume
             }
         })
         return NextResponse.json({messgae: "Data validate"}, {status: 201})
