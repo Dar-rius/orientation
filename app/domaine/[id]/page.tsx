@@ -11,6 +11,10 @@ async function getDomaine({id}:{id:number}){
         const res = await prisma.info_domaine.findUnique({
             where:{
                 id:_id
+            },
+            include:{
+              Ecole: true,
+                Metier:true
             }
         })
         return res
@@ -47,9 +51,7 @@ async function getMetier({id}:{id:number}){
 
 export default async function Domaine({params}:{params:{id:string}}){
     const id = Number(params.id)
-    const domaine = await getDomaine({id})
-    const ecoles = await getEcole({id})
-    const metier = await getMetier({id})
+    const data = await getDomaine({id})
 
     return<main style={{
             background:"white",
@@ -64,9 +66,9 @@ export default async function Domaine({params}:{params:{id:string}}){
                     <h1 style={{
                         marginBottom:20
                     }}>
-                        {domaine?.nom}
+                        {data?.nom}
                     </h1>
-                    <p>{domaine?.description}</p>
+                    <p>{data?.description}</p>
                 </div>
                 <div>
                     <h1 style={{
@@ -75,7 +77,7 @@ export default async function Domaine({params}:{params:{id:string}}){
                     <div style={{
                         marginBottom:50
                     }}>
-                        {metier?.map((item) => (
+                        {data?.Metier.map((item) => (
                             <div key={item.id}
                             style={{
                                 border:"1px solid black",
@@ -108,7 +110,7 @@ export default async function Domaine({params}:{params:{id:string}}){
                     <div style={{
                         marginBottom:50
                     }}>
-                        {ecoles?.map((item) => (
+                        {data?.Ecole.map((item) => (
                             <div key={item.id}
                                  style={{
                                      border:"1px solid black",
