@@ -12,7 +12,9 @@ import Twitter from "@/public/footer/twitter.svg"
 import Line1 from "@/public/footer/line.svg"
 
 export default function Footer(){
-    return <footer>
+    return <footer style={{
+        marginTop:"7%"
+    }}>
         <div style={{
             paddingTop:"3%",
             borderTop:"dashed 2px #F875AA",
@@ -24,101 +26,101 @@ export default function Footer(){
             justifyContent:"space-evenly",
             alignItems:"start",
         }}>
-        <div>
-            <p style={{
-                marginBottom:10,
-                fontWeight:500,
-            }}>Reseaux</p>
+            <div>
+                <p style={{
+                    marginBottom:10,
+                    fontWeight:500,
+                }}>Reseaux</p>
+                <div style={{
+                    display:"flex",
+                    alignItems:"center",
+                }}>
+                    <Link href={""}>
+                        <Image src={Facebook}
+                               alt={"facebook"}
+                               width={40}
+                               height={40}
+                               style={{
+                                   marginRight:5
+                               }}
+                        />
+                    </Link>
+
+                    <Link href={""}>
+                        <Image src={Twitter}
+                               alt={"twitter"}
+                               width={40}
+                               height={40}
+                               style={{
+                                   marginRight:5
+                               }}
+                        />
+                    </Link>
+
+                    <Link href={""}>
+                        <Image src={Insta}
+                               alt={"Instagram"}
+                               width={40}
+                               height={40}
+                               style={{
+                                   marginRight:5
+                               }}
+                        />
+                    </Link>
+
+                    <Link href={""}>
+                        <Image src={Youtube}
+                               alt={"Youtube"}
+                               width={40}
+                               height={40}
+                        />
+                    </Link>
+                </div>
+            </div>
+
             <div style={{
                 display:"flex",
-                alignItems:"center",
+                flexDirection:"column",
             }}>
-                <Link href={""}>
-                <Image src={Facebook}
-                       alt={"facebook"}
-                        width={40}
-                       height={40}
+                <p style={{
+                    marginBottom:10,
+                    fontWeight:500,
+                }}>
+                    Liens Rapides
+                </p>
+                <Image src={Line}
+                       alt="Line"
                        style={{
-                           marginRight:5
-                       }}
-                />
-                </Link>
-
-                <Link href={""}>
-                <Image src={Twitter}
-                       alt={"twitter"}
-                       width={40}
-                       height={40}
-                       style={{
-                           marginRight:5
-                       }}
-                />
-                </Link>
-
-                <Link href={""}>
-                <Image src={Insta}
-                       alt={"Instagram"}
-                       width={40}
-                       height={40}
-                       style={{
-                           marginRight:5
-                       }}
-                />
-                </Link>
-
-                <Link href={""}>
-                <Image src={Youtube}
-                       alt={"Youtube"}
-                       width={40}
-                       height={40}
-                />
-                </Link>
-            </div>
-        </div>
-
-        <div style={{
-            display:"flex",
-            flexDirection:"column",
-        }}>
-            <p style={{
-                marginBottom:10,
-                fontWeight:500,
-            }}>
-                Liens Rapides
-            </p>
-            <Image src={Line}
-                   alt="Line"
-                   style={{
-                       marginBottom:10,
-                   }}/>
-            <Link href={""} style={{
-                marginBottom:15
-            }}>
+                           marginBottom:10,
+                       }}/>
+                <Link href={""} style={{
+                    marginBottom:15
+                }}>
                 <span style={{
                     color:"#F875AA",
                     fontWeight:600,
                     marginRight:10,
                 }}> {'>'} </span> Home
-            </Link>
-            <Link href={""} style={{
-                marginBottom:15
-            }}>
+                </Link>
+                <Link href={""} style={{
+                    marginBottom:15
+                }}>
                 <span style={{
                     color: "#F875AA",
                     fontWeight:600,
                     marginRight:10,
                 }}> {'>'} </span>
-                A propos de nous
-            </Link>
-            <Link href={""} >
+                    A propos de nous
+                </Link>
+                <Link href={""} >
                 <span style={{
                     color: "#F875AA",
                     fontWeight:600,
                     marginRight:10,
                 }}> {'>'} </span>
-                Communaute
-            </Link>
-        </div>
+                    Communaute
+                </Link>
+            </div>
 
             <div style={{
                 display:"flex",
@@ -158,59 +160,59 @@ export default function Footer(){
             <div style={{
                 display: "flex",
                 flexDirection: "column",
-        }}>
-            <p style={{
-                marginBottom:10,
-                fontWeight:500,
-            }}>Contact</p>
-            <Link href={""} style={{
-                marginBottom:15,
-                display:"flex",
-                alignItems:"center",
+            }}>
+                <p style={{
+                    marginBottom:10,
+                    fontWeight:500,
+                }}>Contact</p>
+                <Link href={""} style={{
+                    marginBottom:15,
+                    display:"flex",
+                    alignItems:"center",
 
-            }}>
-                <Image
-                    src={Location}
-                    alt={"Lieu"}
-                    width={30}
-                    height={30}
-                    style={{
-                        marginRight:10,
-                    }}
-                />
-                <p>Dakar Plateau, Rue Saint Michel</p>
-            </Link>
-            <Link href={""} style={{
-                marginBottom:15,
-                display:"flex",
-                alignItems:"center",
-            }}>
-                <Image
-                    src={Email}
-                    alt={"Email"}
-                    width={30}
-                    height={30}
-                    style={{
-                        marginRight:10,
-                    }}/>
-                <p>Ucao@Ucao.Edu.sn</p>
-            </Link>
-            <Link href={""} style={{
-                marginBottom:15,
-                display:"flex",
-                alignItems:"center",
-            }}>
-                <Image
-                    src={Phone}
-                    alt={"Phone"}
-                    width={30}
-                    height={30}
-                    style={{
-                        marginRight:10,
-                    }}/>
-                <p>+221 800 00 50 50</p>
-            </Link>
-        </div>
+                }}>
+                    <Image
+                        src={Location}
+                        alt={"Lieu"}
+                        width={30}
+                        height={30}
+                        style={{
+                            marginRight:10,
+                        }}
+                    />
+                    <p>Dakar Plateau, Rue Saint Michel</p>
+                </Link>
+                <Link href={""} style={{
+                    marginBottom:15,
+                    display:"flex",
+                    alignItems:"center",
+                }}>
+                    <Image
+                        src={Email}
+                        alt={"Email"}
+                        width={30}
+                        height={30}
+                        style={{
+                            marginRight:10,
+                        }}/>
+                    <p>Ucao@Ucao.Edu.sn</p>
+                </Link>
+                <Link href={""} style={{
+                    marginBottom:15,
+                    display:"flex",
+                    alignItems:"center",
+                }}>
+                    <Image
+                        src={Phone}
+                        alt={"Phone"}
+                        width={30}
+                        height={30}
+                        style={{
+                            marginRight:10,
+                        }}/>
+                    <p>+221 800 00 50 50</p>
+                </Link>
+            </div>
         </div>
         <div>
             <Image src={End}
