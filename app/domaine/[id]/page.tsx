@@ -87,20 +87,26 @@ export default async function Domaine({params}:{params:{id:string}}){
                                      padding:"4% 20px",
                                      marginTop:50,
                                      marginBottom:50,
-                                     background:"#F3F0FF"
+                                     background:"#F3F0FF",
+                                     paddingTop: "1%",
+                                     paddingBottom: "1%",
                                  }}>
                                 <div style={{
-                                    display:"flex",
-                                    alignItems:"center",
-                                    width:"15%",
-                                    borderRight:"1px solid black"
+                                    width:"14%",
+                                    borderRight:"1px solid black",
+                                    padding:"0% 20px",
+                                    paddingTop: "2.2%",
+                                    paddingBottom: "2.2%",
+                                    fontWeight:"bold"
                                 }}>
                                     {item.nom}
                                 </div>
                                 <p style={{
                                     width:"23%",
-                                    marginLeft:"5%",
-                                    borderRight:"1px solid black"
+                                    marginLeft:"1.5%",
+                                    borderRight:"1px solid black",
+                                    paddingTop: "2.2%",
+                                    paddingBottom: "2.2%",
                                 }}>Adresse: {item.adresse}</p>
                                 <p style={{
                                     marginLeft:"5%",
