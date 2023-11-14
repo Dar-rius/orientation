@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { nom, resume, id_domaine } = await req.json();
+    const [{ nom, resume, id_domaine }] = await req.json();
     await main();
     await  prisma.info_metier.createMany({
       data: [{

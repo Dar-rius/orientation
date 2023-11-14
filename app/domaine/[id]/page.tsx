@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import CompDomaine from "@/components/head";
 import prisma from "@/prisma/prisma";
 import style from "@/styles/info.module.css"
+import {Accordion, AccordionItem, AccordionPanel, AccordionButton, AccordionIcon, Box} from "@chakra-ui/react";
 
 async function getDomaine({id}:{id:number}){
     try{
@@ -52,29 +53,21 @@ export default async function Domaine({params}:{params:{id:string}}){
                         marginBottom:50
                     }}>
                         {data?.Metier.map((item) => (
-                            <div key={item.id}
-                            style={{
-                                border:"1px solid black",
-                                borderRadius: 29,
-                                display:"flex",
-                                alignItems:"center",
-                                padding:"4% 20px",
-                                marginTop:50,
-                                marginBottom:50,
-                                background:"#F3F0FF"
-                            }}>
-                                <div style={{
-                                    display:"flex",
-                                    alignItems:"center",
-                                    width:"15%",
-                                    borderRight:"1px solid black"
-                                }}>
-                                    {item.nom}
-                                </div >
-                                <p style={{
-                                    marginLeft:"5%",
-                                }}>{item.resume}</p>
-                            </div>
+                            <Accordion key={item.id}  allowToggle>
+                                <AccordionItem mb={10}>
+                                    <h2>
+                                        <AccordionButton  color="black" bg="white" borderRadius={31}>
+                                            <Box as="span" flex='1' textAlign='left' p="3%" fontSize={16}>
+                                                {item.nom}
+                                            </Box>
+                                            <AccordionIcon fontSize='25px' mr={30}/>
+                                        </AccordionButton>
+                                    </h2>
+                                    <AccordionPanel p={10}>
+                                        {item.resume}
+                                    </AccordionPanel>
+                                </AccordionItem>
+                            </Accordion>
                         ))}
                     </div>
 

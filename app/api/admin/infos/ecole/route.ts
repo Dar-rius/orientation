@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const { nom, adresse, site, id_domaine } = await req.json();
+    const [{ nom, adresse, site, id_domaine }] = await req.json();
     await main();
     await prisma.info_ecole.createMany({
       data: [{
