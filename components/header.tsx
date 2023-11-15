@@ -10,6 +10,7 @@ export default function Header(){
             justifyContent:"space-between",
             marginLeft: 50,
             marginRight: 50,
+            marginBottom:"4%"
         }} >
            <Image
                src={Logo}

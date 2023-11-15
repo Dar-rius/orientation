@@ -30,8 +30,8 @@ export default async function Conseiller(){
                             alignItems:"center",
                             padding:"0% 20px",
                             marginRight:150,
-                            marginTop:50,
-                            marginBottom:50,
+                            marginTop:25,
+                            marginBottom:25,
                             paddingTop: "1%",
                             paddingBottom: "1%",
                         }}>

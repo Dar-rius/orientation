@@ -214,10 +214,12 @@ export default function Footer(){
                 </Link>
             </div>
         </div>
-        <div>
             <Image src={End}
                    alt={"Fin"}
+                   style={{
+                       width:"100%",
+                       height:"100%"
+                   }}
             />
-        </div>
     </footer>
 }
