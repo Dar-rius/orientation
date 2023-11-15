@@ -1,14 +1,14 @@
 .list{
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-
-
 .item{
-    width: 33%;
-    padding: 4%;
+    width: 310px;
+    padding-bottom: 4%;
 }
 
 .item h3{
@@ -16,6 +16,6 @@
 }
 
 .item p{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     font-size: 15px;
 }

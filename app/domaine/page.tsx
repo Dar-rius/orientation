@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import prisma from "@/prisma/prisma";
 import styles from "@/styles/domaine.module.css"
 import CompDomaine from "@/components/head";
+import  ImageDomaine from "@/public/domaines/im.svg"
+import Image from "next/image";
 
 async function getDiscussion(){
     try{
@@ -47,8 +49,15 @@ export default async function Domaine(){
             <div className={styles.list}>
                 {domaines?.map((item)=> (
                     <div key={item.id} className={styles.item}>
-                        <h3>{item.nom}</h3>
-                        <p>{item.resume}</p>
+                            <Image src={ImageDomaine} alt={"test"}
+                                   width={300}
+                            />
+                        <p style={{
+                            fontSize:18
+                        }}>{item.nom}</p>
+                        <p style={{
+                            marginBottom:30
+                        }}>{item.resume}</p>
                         <Link href={`/domaine/${item.id}`}
                         style={{
                             padding:"4%",
@@ -56,6 +65,7 @@ export default async function Domaine(){
                             borderRadius: 10,
                             paddingLeft:20,
                             paddingRight:20,
+                            background:"#AEDEFC"
                         }}
                         >
                             Decouvrir

@@ -25,6 +25,7 @@ model Discussion {
   subject   String   @db.Char(30)
   topic     String   @db.Char(100)
   createdAt DateTime @default(now())
+  pathImage String?
 }
 
 model Info_domaine {
@@ -34,6 +35,7 @@ model Info_domaine {
   description String        @db.Char(250)
   Ecole       Info_ecole[]
   Metier      Info_metier[]
+  pathImage   String?
 }
 
 model Info_metier {

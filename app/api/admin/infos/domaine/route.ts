@@ -13,10 +13,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
         resume
       }],
     });
-    return NextResponse.json({ messgae: "Data validate" }, { status: 201 });
+    return NextResponse.json({ message: "Data validate" }, { status: 201 });
   } catch (err) {
     return NextResponse.json(
-      { messgae: "Data don't validate" },
+      { message: "Data don't validate" },
       { status: 500 },
     );
   } finally {
