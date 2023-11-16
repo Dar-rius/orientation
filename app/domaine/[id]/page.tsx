@@ -28,9 +28,7 @@ export default async function Domaine({params}:{params:{id:string}}){
     const id = Number(params.id)
     const data = await getDomaine({id})
 
-    return<main style={{
-            background:"white",
-            color:"black"}}>
+    return<main>
         <Header/>
         <section>
             <CompDomaine/>
@@ -84,20 +82,19 @@ export default async function Domaine({params}:{params:{id:string}}){
                                      borderRadius: 29,
                                      display:"flex",
                                      alignItems:"center",
-                                     padding:"4% 20px",
+                                     padding:"1.7% 20px",
                                      marginTop:50,
                                      marginBottom:50,
                                      background:"#F3F0FF",
-                                     paddingTop: "1%",
-                                     paddingBottom: "1%",
                                  }}>
                                 <div style={{
                                     width:"14%",
                                     borderRight:"1px solid black",
                                     padding:"0% 20px",
-                                    paddingTop: "2.2%",
-                                    paddingBottom: "2.2%",
-                                    fontWeight:"bold"
+                                    fontWeight:"bold",
+                                    paddingTop: "1.5%",
+                                    paddingBottom: "1.5%",
+                                    fontSize:18,
                                 }}>
                                     {item.nom}
                                 </div>
@@ -105,11 +102,13 @@ export default async function Domaine({params}:{params:{id:string}}){
                                     width:"23%",
                                     marginLeft:"1.5%",
                                     borderRight:"1px solid black",
-                                    paddingTop: "2.2%",
-                                    paddingBottom: "2.2%",
+                                    fontSize:18,
+                                    paddingBottom: "1.5%",
+                                    paddingTop: "1.5%",
                                 }}>Adresse: {item.adresse}</p>
                                 <p style={{
                                     marginLeft:"5%",
+                                    fontSize:18
                                 }}>Site web: {item.site}</p>
                             </div>
                         ))}

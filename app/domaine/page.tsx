@@ -28,10 +28,7 @@ async function getDomaine(){
 export default async function Domaine(){
     const discu = await getDiscussion()
     const domaines = await getDomaine()
-    return<main style={{
-        background:"white",
-        color:"black",
-    }}>
+    return<main>
         <Header/>
         <section style={{
             marginLeft:50,

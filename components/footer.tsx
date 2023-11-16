@@ -13,7 +13,8 @@ import Line1 from "@/public/footer/line.svg"
 
 export default function Footer(){
     return <footer style={{
-        marginTop:"7%"
+        marginTop:"7%",
+        background:"white"
     }}>
         <div style={{
             paddingTop:"3%",
@@ -119,41 +120,6 @@ export default function Footer(){
                     marginRight:10,
                 }}> {'>'} </span>
                     Communaute
-                </Link>
-            </div>
-
-            <div style={{
-                display:"flex",
-                flexDirection:"column",
-            }}>
-                <p style={{
-                    marginBottom:10,
-                    fontWeight:500,
-                }}>Blog</p>
-                <Image src={Line}
-                       alt="Line"
-                       style={{
-                           marginBottom:10,
-                       }}/>
-                <Link href={""} style={{
-                    marginBottom: 15
-                }}>
-                <span style={{
-                    color: "#F875AA",
-                    fontWeight:600,
-                    marginRight:10,
-                }}> {'>'} </span>
-                    Home
-                </Link>
-                <Link href={""} style={{
-                    marginBottom: 15
-                }}>
-                <span style={{
-                    color: "#F875AA",
-                    fontWeight:600,
-                    marginRight:10,
-                }}> {'>'} </span>
-                    A propos de nous
                 </Link>
             </div>
 

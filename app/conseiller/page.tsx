@@ -18,7 +18,7 @@ async function getData(){
 
 export default async function Conseiller(){
     const data = await getData()
-    return<main style={{ backgroundImage:`url(${Background})`, color:"black" }}>
+    return<main style={{ backgroundImage:`url(${Background.src})`, color:"black" }}>
         <Header/>
         <section style={{marginRight:50, marginLeft:50}}>
             <h1>Contactez nos conseillers</h1>
@@ -34,6 +34,7 @@ export default async function Conseiller(){
                             marginBottom:25,
                             paddingTop: "1%",
                             paddingBottom: "1%",
+                            background:"white"
                         }}>
                         <div style={{
                             display:"flex",
@@ -41,6 +42,7 @@ export default async function Conseiller(){
                             width:"20%",
                             borderRight:"1px solid black",
                             padding:"0% 20px",
+                            height: 50,
                         }}>
                             <Image src={Profile} alt="Profile"
                             style={{marginRight:10}}/>
@@ -54,8 +56,7 @@ export default async function Conseiller(){
                             width:"23%",
                             marginLeft:"5%",
                             borderRight:"1px solid black",
-                            paddingTop: "2.2%",
-                            paddingBottom: "2.2%",
+                            height: 50,
                         }}>
                             <p>Email: <span style={{color:"#9C9C9C"}}>{item.email}</span></p>
                             <p>Telephone: <span style={{color: "#9C9C9C"}}>{item.telephone}</span></p>
