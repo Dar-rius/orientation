@@ -16,7 +16,13 @@ export default function Explain() {
       <div className="flex px-16 pb-4">
         <div className="flex flex-col gap-4 w-full items-start justify-center">
           <h2 className="text-blue-500 text-3xl">txt</h2>
-          <p></p>
+          <p>
+            votre reussite educative est notre priorite absolue, et pourvous
+            offir une experience d&apos;orientation vraiment personnalisee, nous
+            avons besoin de vous connaitre. Les informations que vous partagez
+            avec nous sont la cle pour vous guider vers un avenir educatif qui
+            vous correspond parfaitement
+          </p>
         </div>
         <div className="w-full flex items-start justify-center">
           <Image width={206} height={206} src={txt} alt="" />
