@@ -4,15 +4,17 @@ import prisma from "@/prisma/prisma";
 
 export async function POST(req: NextRequest) {
   try {
-    const { nom, prenom, email, telephone } = await req.json();
+    const { nom, prenom, genre, email, telephone, description } = await req.json();
     await main();
-    await prisma.conseiller.create({
-      data: {
+    await prisma.conseiller.createMany({
+      data: [{
         nom,
         prenom,
+        genre,
         email,
         telephone,
-      },
+        description
+      }],
     });
     return NextResponse.json({ message: "Data validate" }, { status: 201 });
   } catch {

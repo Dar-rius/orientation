@@ -8,7 +8,7 @@ export async function PUT(
 ) {
   try {
     const id = Number(params.id);
-    const { nom, description } = await req.json();
+    const { nom, description, resume } = await req.json();
     await main();
     await prisma.info_domaine.update({
       where: {
@@ -17,6 +17,7 @@ export async function PUT(
       data: {
         nom,
         description,
+        resume
       },
     });
     return NextResponse.json({ messgae: "Data validate" }, { status: 201 });
@@ -33,62 +34,27 @@ export async function DELETE(
 ) {
   try {
     const id = Number(params.id);
-    main();
-    if (
-      Number(prisma.info_ecole.count) > 0 &&
-      Number(prisma.info_metier.count) > 0
-    ) {
-      await prisma.info_ecole.delete({
-        where: {
-          id_domaine: id,
-        },
-      });
+    await main();
 
-      await prisma.info_metier.delete({
-        where: {
-          id_domaine: id,
-        },
-      });
+    await  prisma.info_ecole.deleteMany({
+      where:{
+        id_domaine:id
+      }
+    })
 
-      await prisma.info_domaine.delete({
-        where: {
-          id: id,
-        },
-      });
-    } else if (Number(prisma.info_ecole.count) > 0) {
-      await prisma.info_ecole.delete({
-        where: {
-          id_domaine: id,
-        },
-      });
+    await prisma.info_metier.deleteMany({
+      where: {
+        id_domaine: id,
+      },
+    });
 
-      await prisma.info_domaine.delete({
-        where: {
-          id: id,
-        },
-      });
-    } else if (Number(prisma.info_metier.count) > 0) {
-      await prisma.info_metier.delete({
-        where: {
-          id_domaine: id,
-        },
-      });
-
-      await prisma.info_domaine.delete({
-        where: {
-          id: id,
-        },
-      });
-    } else {
-      await prisma.info_domaine.delete({
-        where: {
-          id: id,
-        },
-      });
-    }
-
+    await prisma.info_domaine.delete({
+      where: {
+        id: id,
+      },
+    });
     return NextResponse.json({ messgae: "Data deleted" }, { status: 200 });
-  } catch {
+    } catch {
     return NextResponse.json({ messgae: "ID don't validate" }, { status: 404 });
   } finally {
     prisma.$disconnect();

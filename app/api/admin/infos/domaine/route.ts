@@ -4,18 +4,19 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { nom, description } = await req.json();
+    const [{nom, description, resume }] = await req.json();
     await main();
-    await prisma.info_domaine.create({
-      data: {
+    await prisma.info_domaine.createMany({
+      data: [{
         nom,
         description,
-      },
+        resume
+      }],
     });
-    return NextResponse.json({ messgae: "Data validate" }, { status: 201 });
+    return NextResponse.json({ message: "Data validate" }, { status: 201 });
   } catch (err) {
     return NextResponse.json(
-      { messgae: "Data don't validate" },
+      { message: "Data don't validate" },
       { status: 500 },
     );
   } finally {

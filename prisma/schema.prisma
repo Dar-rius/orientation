@@ -11,54 +11,48 @@ datasource db {
 }
 
 model Conseiller {
-  id        Int    @id @default(autoincrement())
-  nom       String @db.Char(15)
-  prenom    String @db.Char(15)
-  email     String @unique
-  telephone String @unique @db.Char(15)
+  id          Int    @id @default(autoincrement())
+  nom         String @db.Char(15)
+  prenom      String @db.Char(15)
+  genre       String @db.Char(10)
+  email       String @unique
+  telephone   String @unique @db.Char(15)
+  description String @db.Char(100)
 }
 
-model Admin {
-  id       Int    @id @default(autoincrement())
-  nom      String @db.Char(15)
-  prenom   String @db.Char(15)
-  email    String @unique
-  password String
-}
-
-model Eleve {
-  id        Int    @id @default(autoincrement())
-  nom       String @db.Char(15)
-  prenom    String @db.Char(15)
-  email     String @unique
-  telephone String @unique @db.Char(15)
-  age       Int
-  password  String
+model Discussion {
+  id        Int      @id @default(autoincrement())
+  subject   String   @db.Char(30)
+  topic     String   @db.Char(100)
+  createdAt DateTime @default(now())
+  pathImage String?
 }
 
 model Info_domaine {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(20)
-  description String
+  id          Int           @id @default(autoincrement())
+  nom         String        @db.Char(20)
+  resume      String        @db.Char(100)
+  description String        @db.Char(250)
   Ecole       Info_ecole[]
   Metier      Info_metier[]
+  pathImage   String?
 }
 
 model Info_metier {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(20)
-  description String
-  domaine     Info_domaine @relation(fields: [id_domaine], references: [id])
-  id_domaine  Int
+  id         Int          @id @default(autoincrement())
+  nom        String       @db.Char(20)
+  resume     String       @db.Char(200)
+  domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
+  id_domaine Int
 }
 
 model Info_ecole {
-  id          Int    @id @default(autoincrement())
-  nom         String @db.Char(15)
-  adresse     String @db.Char(15)
-  site        String
-  domaine     Info_domaine @relation(fields: [id_domaine], references: [id])
-  id_domaine  Int
+  id         Int          @id @default(autoincrement())
+  nom        String       @db.Char(15)
+  adresse    String       @db.Char(30)
+  site       String
+  domaine    Info_domaine @relation(fields: [id_domaine], references: [id])
+  id_domaine Int
 }
 
 model Questionnaire {
@@ -75,22 +69,22 @@ model Questionnaire {
   hobby             String
   domaine_interesse String
   soutien           String
-  infos_sup         String
+  infos_sup         String @db.Char(200)
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
