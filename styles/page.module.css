@@ -5,11 +5,6 @@
     url("./Quando/Quando-Regular.ttf") format("truetype");
 }
 
-.main {
-  background: white;
-  color: black;
-}
-
 .first {
   display: flex;
   justify-content: center;

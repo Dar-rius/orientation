@@ -94,7 +94,7 @@ export default function Footer(){
                        style={{
                            marginBottom:10,
                        }}/>
-                <Link href={""} style={{
+                <Link href={"/"} style={{
                     marginBottom:15
                 }}>
                 <span style={{
@@ -103,7 +103,7 @@ export default function Footer(){
                     marginRight:10,
                 }}> {'>'} </span> Home
                 </Link>
-                <Link href={""} style={{
+                <Link href={"/explain"} style={{
                     marginBottom:15
                 }}>
                 <span style={{

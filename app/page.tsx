@@ -46,7 +46,7 @@ export default function Home() {
         </p>
         <div className={Style.two}>
           <Link
-            href={""}
+            href={"/explain"}
             style={{
               border: "1px solid black",
               padding: "12px 30px",

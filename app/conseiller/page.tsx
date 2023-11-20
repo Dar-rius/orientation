@@ -5,7 +5,6 @@ import Profile from "@/public/conseiller/User.svg";
 import Image from "next/image";
 import prisma from "@/prisma/prisma";
 import Phone from "@/public/footer/phone.svg";
-import Background from "@/public/accueil/background.png";
 
 async function getData() {
   try {
@@ -19,7 +18,7 @@ async function getData() {
 export default async function Conseiller() {
   const data = await getData();
   return (
-    <main style={{ backgroundImage: `url(${Background.src})`, color: "black" }}>
+    <main style={{}}>
       <Header />
       <section style={{ marginRight: 50, marginLeft: 50 }}>
         <h1

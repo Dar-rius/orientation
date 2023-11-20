@@ -6,6 +6,7 @@ import temps from "../../public/explain/4.svg";
 import exp from "../../public/explain/5.svg";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 export default function Explain() {
   return (
@@ -18,8 +19,8 @@ export default function Explain() {
           </h1>
         </header>
       </div>
-      <div className="flex px-16 pb-4">
-        <div className="flex flex-col gap-4 w-full items-start justify-center">
+      <div className="flex px-36 pb-16">
+        <div className="flex flex-col gap-4 w-fit items-start justify-center">
           <h2 className="text-blue-500 text-3xl">txt</h2>
           <p>
             votre reussite educative est notre priorite absolue, et pourvous
@@ -35,7 +36,7 @@ export default function Explain() {
       </div>
 
       <hr className="py-8" />
-      <section className="px-32 pb-16 flex flex-col gap-8 items-center">
+      <section className="px-36 pb-16 flex flex-col gap-8 items-center">
         <div className="flex">
           <div className="flex flex-col gap-4 w-full items-start justify-center">
             <h3 className="text-red-300 text-2xl">Orientation Ciblee</h3>
@@ -95,9 +96,16 @@ export default function Explain() {
             </p>
           </div>
         </div>
-        <button className="px-6 py-4 bg-blue-300 border-solid rounded-full ">
-          C&apos;est parti!
-        </button>
+        <Link href={"/formulaire"} style={{
+          background:"#AEDEFC",
+          border:"1px solid black",
+          borderRadius:28,
+          padding:"16px 28px",
+          textAlign:"center",
+          marginTop:50
+        }}>
+          C'est parti !
+        </Link>
       </section>
       <Footer />
     </>

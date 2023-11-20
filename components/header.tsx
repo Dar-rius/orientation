@@ -15,20 +15,32 @@ export default function Header() {
         paddingTop: "2%",
       }}
     >
-      <Image src={Logo} alt="Logo" width={90} height={90} />
-
+        <Link href={"/"}>
+            <Image src={Logo} alt="Logo" width={90} height={90} />
+        </Link>
       <div>
         <Link
-          href={""}
+          href={"/conseiller"}
           style={{
             fontSize: 18,
           }}
         >
-          Accueil
+          Conseiller
         </Link>
 
+          <Link
+              href={"/domaine"}
+              style={{
+                  marginRight: 20,
+                  marginLeft: 60,
+                  fontSize: 18,
+              }}
+          >
+              Domaines
+          </Link>
+
         <Link
-          href={""}
+          href={"/explain"}
           style={{
             marginRight: 20,
             marginLeft: 60,

@@ -16,7 +16,7 @@ export default function Form() {
 
   const forms = [<Step1 key={0} />, <Step2 key={1} />, <Step3 key={2} />];
 
-  async function nextStep(e) {
+  async function nextStep(e:any) {
     let Donnees = datas;
     const formLenght =
       step === 0 ? e.target.elements.length - 1 : e.target.elements.length - 2;
@@ -36,10 +36,11 @@ export default function Form() {
     setStep(step - 1);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e:any) {
     e.preventDefault();
     nextStep(e);
   }
+
 
   return (
     <>
@@ -95,7 +96,7 @@ export default function Form() {
         </nav>
       </header>
       <div className="flex gap-8">
-        <div className="w-full flex flex-col p-8 border rounded relative gap-4">
+        <div className="w-full flex flex-col p-8 border-2 rounded-lg relative gap-4 border-indigo-300">
           <Image
             src={formIcon}
             alt="form-icon"
@@ -106,20 +107,23 @@ export default function Form() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {forms[step]}
 
-            <button className="px-4 py-2 rounded bg-green-400" type="submit">
-              {step === 2 ? "finish" : "next"}
+            <button className="px-4 py-2 rounded-full bg-indigo-300" type="submit">
+              {step === 2 ? "finish" : "Valider"}
             </button>
           </form>
         </div>
-        <div className="flex flex-col items-center justify-center p-4 border-l border-black relative">
+        <div className="p-4 border-l border-black relative">
           <Image
             src={infoIcon}
             alt="info-icon"
-            height={30}
-            width={30}
+            height={40}
+            width={40}
             className="absolute right-4 -top-0"
           />
-          <p>
+          <p style={{
+            marginTop:100,
+            width:"95%"
+        }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
             ipsum sed qui architecto libero eum deserunt illo delectus iusto
             doloremque accusantium, consequatur est magni fuga totam molestias
