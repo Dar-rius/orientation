@@ -12,7 +12,7 @@ export default function Header() {
         marginLeft: 50,
         marginRight: 50,
         marginBottom: "4%",
-        paddingTop: "3%",
+        paddingTop: "2%",
       }}
     >
       <Image src={Logo} alt="Logo" width={90} height={90} />
@@ -21,7 +21,7 @@ export default function Header() {
         <Link
           href={""}
           style={{
-            fontSize: 20,
+            fontSize: 18,
           }}
         >
           Accueil
@@ -32,7 +32,7 @@ export default function Header() {
           style={{
             marginRight: 20,
             marginLeft: 60,
-            fontSize: 20,
+            fontSize: 18,
           }}
         >
           A propos
